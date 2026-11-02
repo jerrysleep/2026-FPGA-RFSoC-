@@ -1,0 +1,89 @@
+# Source manifest for the original non-MTS Proj_SP design. Paths are relative to src/pl.
+set ::sp::rtl_files {
+    Pulse_Compress/ch_pulse_compression.v
+    Pulse_Compress/ch_pulse_compression_unit.v
+    Pulse_Compress/top_5ch_pulse_compression.v
+    buffer/Buffer_top.v
+    buffer/ping_pang_switch.v
+    buffer/wr_ram_ctrl.v
+    chirp/ChirpGenUnit.v
+    chirp/ChirpGen_user.v
+    chirp/Chirp_Gen_Ctrl.v
+    chirp/chirp_top.v
+    chirp/dds_phase_mes.v
+    lmk04828/LMK04828_config.v
+    lmk04828/data_transmit_spi_16a_8d.v
+    new/Analysis_RadarParameter.v
+    new/FrameRef_delay_ctrl.v
+    new/Gen_Sys_Rst.v
+    new/Parameter_Ctrl.v
+    new/Processor_Ctrl.v
+    new/RF_Timer.v
+    new/RadarParameter_OutputDelay.v
+    new/Radar_Processor.v
+    new/Readme.v
+    new/Rst_Sync.v
+    new/Serial_Comm.v
+    new/Signal_Processor_Top.v
+    new/clk_spi_ge.v
+    new/define.vh
+    new/fft_chal.v
+    new/gate_buff_ctrl.v
+    new/pulse_peak_gate_detect.v
+    new/time_module.v
+    new/timing_cell.v
+    new/timing_ref.v
+    new/top_fft.v
+    new/uart_core_fifo.v
+    new/uart_core_ram.v
+    si5341/cfg_si5341.v
+    si5341/data_transmit_spi_a8_d8.v
+}
+set ::sp::ip_files {
+    sources_1/ip/Fifo_Serial_Comm_8x512/Fifo_Serial_Comm_8x512.xci
+    sources_1/ip/PL_SYS_CLK/PL_SYS_CLK.xci
+    sources_1/ip/PulseCompressfifo_32x256/PulseCompressfifo_32x256.xci
+    sources_1/ip/ROM_ff_far/ROM_ff_far.xci
+    sources_1/ip/ROM_ff_near/ROM_ff_near.xci
+    sources_1/ip/arctan_ip/arctan_ip.xci
+    sources_1/ip/axis_dwidth_converter/axis_dwidth_converter.xci
+    sources_1/ip/bram_422_32x256/bram_422_32x256.xci
+    sources_1/ip/buffer_ram/buffer_ram.xci
+    sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+    sources_1/ip/complex_mult_16x16/complex_mult_16x16.xci
+    sources_1/ip/dds_compiler_0/dds_compiler_0.xci
+    sources_1/ip/dds_compiler_1/dds_compiler_1.xci
+    sources_1/ip/fft_ip/fft_ip.xci
+    sources_1/ip/fft_win_1024/fft_win_1024.xci
+    sources_1/ip/fft_win_512/fft_win_512.xci
+    sources_1/ip/fifo_312_625/fifo_312_625.xci
+    sources_1/ip/fifo_adc_32x2048/fifo_adc_32x2048.xci
+    sources_1/ip/mult_16sx16s/mult_16sx16s.xci
+    sources_1/ip/mult_16sx16us/mult_16sx16us.xci
+    sources_1/ip/ram_32bx2x64/ram_32bx2x64.xci
+    sources_1/ip/ram_32bx512/ram_32bx512.xci
+    sources_1/ip/ram_48bx64/ram_48bx64.xci
+    sources_1/ip/ram_52bx512/ram_52bx512.xci
+    sources_1/ip/ram_64x512x32/ram_64x512x32.xci
+    sources_1/ip/ram_64x8x16b/ram_64x8x16b.xci
+    sources_1/ip/snr_div/snr_div.xci
+    sources_1/ip/uart_ram_8x512/uart_ram_8x512.xci
+    sources_1/ip/usp_rf_data_converter_0/usp_rf_data_converter_0.xci
+    sources_1/ip/vio_0/vio_0.xci
+    sources_1/ip/xfft_128/xfft_128.xci
+}
+set ::sp::coefficient_files {
+    sources_1/ip/coeff_far_hex.coe
+    sources_1/ip/coeff_far_hex_0start_packed.coe
+    sources_1/ip/coeff_far_hex_m25p25_packed.coe
+    sources_1/ip/coeff_near_hex.coe
+    sources_1/ip/coeff_near_hex_0start_packed.coe
+    sources_1/ip/coeff_near_hex_m25p25_packed.coe
+    sources_1/ip/fft_win_1024.coe
+    sources_1/ip/fft_win_512.coe
+}
+set ::sp::constraint_files {
+    constrs_1/imports/new/debug_xdc.xdc
+    constrs_1/imports/new/top.xdc
+}
+set ::sp::bd_file {sources_1/bd/design_1/design_1.bd}

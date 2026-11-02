@@ -1,0 +1,633 @@
+`timescale 1ns / 1ps
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+module ch_pulse_compression_unit_old_debug_sim (
+    input   wire        clk,
+    input   wire        rst,
+    input   wire        en,                      
+
+    input   wire        start,                   
+    input   wire        far_or_near,             
+    input   wire        far_or_near_out,             
+    input   wire [15:0] din_i,
+    input   wire [15:0] din_q,
+    input   wire        din_valid,               
+
+(* KEEP = "true" *)    output  reg  [15:0] dout_i,
+(* KEEP = "true" *)    output  reg  [15:0] dout_q,
+(* KEEP = "true" *)    output  reg         dout_valid,
+(* KEEP = "true" *)    output  reg         done                     
+);
+
+ 
+ 
+ 
+localparam FFT_SIZE = 128;
+localparam FFT_SIZE_sub1 = FFT_SIZE -1;
+localparam DATA_WIDTH = 16;
+localparam FIFO_DEPTH = 128;
+localparam FAR_POINTS = 60;
+localparam NEAR_POINTS = 49;
+localparam FAR_OUT_POINTS = 61;
+localparam NEAR_OUT_POINTS = 48;
+
+wire		[6:0]	points_num ;
+wire		[6:0]	out_points_num ;
+assign points_num = (far_or_near == 1'b1)? FAR_POINTS :NEAR_POINTS;
+assign out_points_num = (far_or_near_out == 1'b1)? FAR_OUT_POINTS :NEAR_OUT_POINTS;
+ 
+ 
+ 
+(* KEEP = "true" *)reg         input_fifo_wr_en;
+(* KEEP = "true" *)reg  [31:0] input_fifo_din;
+(* KEEP = "true" *)wire        input_fifo_rd_en;
+(* KEEP = "true" *)wire [31:0] input_fifo_dout;
+(* KEEP = "true" *)wire        input_fifo_empty;
+(* KEEP = "true" *)wire        input_fifo_full;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+(* KEEP = "true" *)reg					fifo_rst		;
+(* KEEP = "true" *)reg					fft_rstn		;
+(* KEEP = "true" *)reg					en_d1			;
+(* KEEP = "true" *)reg		[7:0]		rst_cnt			;
+
+always @(posedge clk or posedge rst) begin
+	if(rst == 1'b1) begin
+		en_d1			<= 1'b0		;
+	end
+	else begin
+		en_d1			<= en		;
+	end
+end
+always @(posedge clk or posedge rst) begin
+	if(rst == 1'b1) begin
+		rst_cnt			<= 8'd0		;
+	end
+	else begin
+		if(fifo_rst== 1'b1)
+			rst_cnt		<= rst_cnt+ 1;
+		else
+			rst_cnt		<= 8'd0		;
+	end
+end
+
+always @(posedge clk or posedge rst) begin
+	if(rst == 1'b1) begin
+		fifo_rst		<= 1'b1		;
+		fft_rstn		<= 1'b0		;
+	end
+	else begin
+		if((en_d1== 1'b1) &&(en == 1'b0)) begin
+			fifo_rst	<= 1'b1		;
+			fft_rstn	<= 1'b0		;
+		end
+		else if(rst_cnt >8'd50) begin
+			fifo_rst	<= 1'b0		;
+			fft_rstn	<= 1'b1		;
+		end
+		else begin
+			fifo_rst	<= fifo_rst	;
+			fft_rstn	<= fft_rstn	;
+		end
+	end
+end
+
+
+PulseCompressfifo_32x256 Input_fifo (
+  .clk				(	clk					),                   
+  .srst				(	fifo_rst			),                 
+  .din				(	input_fifo_din		),                   
+  .wr_en			(	input_fifo_wr_en	),               
+  .rd_en			(	reading				),               
+  .dout				(	input_fifo_dout		),                 
+  .full				(	input_fifo_full		),                 
+  .empty			(	input_fifo_empty	),               
+  .wr_rst_busy		( 						),   
+  .rd_rst_busy		( 						)   
+);
+ 
+reg [6:0] write_cnt;
+reg       write_done;
+
+always @(posedge clk or posedge rst) begin
+    if(rst == 1'b1) begin
+        input_fifo_wr_en <= 1'b0;
+        input_fifo_din    <= 32'd0;
+        write_cnt         <= 7'd0;
+    end
+    else if(en == 1'b0) begin
+        input_fifo_wr_en <= 1'b0;
+        write_cnt        <= 7'd0;
+    end
+    else begin
+        if(start == 1'b1) begin
+            write_cnt  <= 7'd0;
+                   if(din_valid == 1'b1 ) begin
+						input_fifo_din <= {din_q, din_i};
+						input_fifo_wr_en <= 1'b1;
+						 
+					end
+					else begin
+						input_fifo_din <= input_fifo_din;
+						input_fifo_wr_en <= 1'b0;
+						 
+					end			
+			
+        end
+        else if(write_done == 1'b0) begin
+             
+            if(write_cnt < FFT_SIZE_sub1) begin
+                if( write_cnt < points_num) begin
+                   if(din_valid == 1'b1 ) begin
+						input_fifo_din <= {din_q, din_i};
+						input_fifo_wr_en <= 1'b1;
+						write_cnt <= write_cnt + 7'd1;
+					end
+					else begin
+						input_fifo_din <= input_fifo_din;
+						input_fifo_wr_en <= 1'b0;
+						write_cnt <= write_cnt ;					
+					end
+                end
+                else begin
+                     
+                    input_fifo_din <= 32'd0;
+                    input_fifo_wr_en <= 1'b1;
+                    write_cnt <= write_cnt + 7'd1;
+                end
+            end
+			else begin
+				input_fifo_wr_en <= 1'b0;
+				
+			end
+        end
+		else begin
+			input_fifo_wr_en <= 1'b0;
+		end
+    end
+end
+
+always @(posedge clk or posedge rst) begin
+    if(rst == 1'b1) begin
+        write_done        <= 1'b1;
+    end
+    else if(en == 1'b0) begin
+        write_done       <= 1'b1;
+    end
+    else begin
+        
+        if(start == 1'b1) begin
+            write_done <= 1'b0;
+        end
+        else begin
+			if(write_cnt  == FFT_SIZE_sub1) begin
+                write_done <= 1'b1;
+            end
+			else 
+				write_done	<= write_done	;   
+        end
+    end
+end
+
+ 
+ 
+ 
+(* KEEP = "true" *)reg  	       	fft_din_valid;
+		
+(* KEEP = "true" *)wire 	       	fft_dout_valid;
+(* KEEP = "true" *)wire	[31:0]	fft_dout	;
+(* KEEP = "true" *)reg 	[15:0] 	fft_dout_i;
+(* KEEP = "true" *)reg 	[15:0] 	fft_dout_q;
+(* KEEP = "true" *)wire 	       	fft_busy;
+(* KEEP = "true" *)wire	[7:0]	fft_axis_data_tuser	;
+
+
+ 
+reg [6:0] rd_cnt;
+reg       reading;
+reg			fft_saxis_tlast		;		 
+assign input_fifo_rd_en = reading && (rd_cnt < FFT_SIZE) && (input_fifo_empty == 1'b0);
+
+always @(posedge clk or posedge rst) begin
+    if(rst == 1'b1) begin
+        reading <= 1'b0;
+        rd_cnt <= 7'd0;
+		fft_saxis_tlast 	<= 1'b0		;
+         
+
+    end
+    else if(en == 1'b0) begin
+        reading <= 1'b0;
+		rd_cnt <= 7'd0;
+		fft_saxis_tlast 	<= 1'b0		;
+         
+    end
+    else begin
+		if (reading == 1'b0) begin
+			fft_saxis_tlast 	<= 1'b0		;
+			if((write_done == 1'b1) && (input_fifo_empty == 1'b0))
+				reading		<= 1'b1	;
+			else
+				reading		<= 1'b0	;
+		end
+		else begin
+			
+			if(rd_cnt == FFT_SIZE_sub1) begin
+				reading		<= 1'b0		;
+				rd_cnt		<= 7'd0		;
+				fft_saxis_tlast 	<= 1'b1		;
+			end
+			else begin
+				reading		<= 1'b1	;
+				rd_cnt			<= rd_cnt + 1;
+				fft_saxis_tlast 	<= 1'b0		;
+			end
+		end
+
+    end
+end
+
+always @(posedge clk or posedge rst) begin
+    if(rst == 1'b1) begin
+        fft_din_valid <= 1'b0;
+    end
+    else if(en == 1'b0) begin
+        fft_din_valid <= 1'b0;
+    end
+    else begin
+        fft_din_valid <=reading;        
+    end
+end
+
+
+xfft_128 u_fft (
+  .aclk						(	clk							),                                                 
+  .aresetn					(	fft_rstn					),                                           
+  .s_axis_config_tdata		(	16'd1						),                   
+  .s_axis_config_tvalid		(	1'b1						),                 
+  .s_axis_config_tready		( 								),                 
+  .s_axis_data_tdata		(	input_fifo_dout				),                       
+  .s_axis_data_tvalid		(	fft_din_valid				),                     
+  .s_axis_data_tready		(								),                     
+  .s_axis_data_tlast		(	fft_saxis_tlast				),                       
+  .m_axis_data_tdata		(	fft_dout			),                       
+  .m_axis_data_tuser		(	fft_axis_data_tuser			),                       
+  .m_axis_data_tvalid		(	fft_dout_valid				),                     
+  .m_axis_data_tready		(	1'b1						),                     
+  .m_axis_data_tlast		( 								),                       
+  .event_frame_started		(								),                   
+  .event_tlast_unexpected	(								),             
+  .event_tlast_missing		(								),                   
+  .event_status_channel_halt(								),       
+  .event_data_in_channel_halt(								),     
+  .event_data_out_channel_halt(								)   
+);
+ 
+ 
+ 
+ 
+
+wire [31:0] rom_dout_far;
+wire [31:0] rom_dout_near;
+wire [31:0] rom_dout;
+wire [15:0] coeff_i;
+wire [15:0] coeff_q;
+
+
+assign rom_dout = (far_or_near == 1'b1) ? rom_dout_far : rom_dout_near;
+ 
+ 
+
+reg	[31:0]	fft_dout_d1;		 
+reg			mul_valid		;
+always @(posedge clk or posedge rst) begin
+	if (rst == 1'b1) begin
+		fft_dout_d1			<= 32'd0		;
+		mul_valid	<= 1'b0		;
+	end
+	else begin
+		fft_dout_d1			<= fft_dout					;
+		mul_valid	<= fft_dout_valid		;
+	end
+end
+
+
+ 
+ROM_ff_far u_rom_far (
+  .clka				(	clk			),     
+  .addra			(	fft_axis_data_tuser[6:0]		),   
+  .douta			(	rom_dout_far	)   
+);
+ROM_ff_near u_rom_near (
+  .clka				(	clk			),     
+  .addra			(	fft_axis_data_tuser[6:0]		),   
+  .douta			(	rom_dout_near	)   
+);
+ 
+     
+     
+     
+ 
+ 
+     
+     
+     
+ 
+
+
+ 
+ 
+ 
+
+ 
+
+wire		[31:0]	mul_dout	;
+wire				mul_dout_valid	;
+complex_mult_16x16 your_instance_name (
+  .aclk					(	clk				),                               
+  .s_axis_a_tvalid		(	mul_valid		),         
+  .s_axis_a_tdata		(	fft_dout_d1		),           
+  .s_axis_b_tvalid		(	mul_valid		),         
+  .s_axis_b_tdata		(	rom_dout		),           
+  .m_axis_dout_tvalid	(	mul_dout_valid	),   
+  .m_axis_dout_tdata	(	mul_dout		)     
+);
+ 
+
+ 
+ 
+ 
+wire        ifft_dout_valid;
+wire [15:0] ifft_dout_i;
+wire [15:0] ifft_dout_q;
+
+wire 	       	ifft_dout_valid;
+wire	[31:0]	ifft_dout	;
+reg 	[15:0] 	ifft_dout_i;
+reg 	[15:0] 	ifft_dout_q;
+wire 	       	ifft_busy;
+wire	[7:0]	ifft_axis_data_tuser	;
+reg		[6:0]		ifft_in_cnt		;
+reg				ifft_saxis_tlast	;
+always @(posedge clk or posedge rst) begin
+	if (rst == 1'b1) begin
+		ifft_in_cnt		<= 7'd0		;
+		ifft_saxis_tlast	<= 1'b0		;
+	end
+	else begin
+		if(mul_dout_valid == 1'b1) begin
+			if(ifft_in_cnt == FFT_SIZE_sub1) begin
+				ifft_in_cnt		<= 7'd0	;
+				ifft_saxis_tlast	<= 1'b1	;
+			end
+			else begin
+				ifft_in_cnt		<= ifft_in_cnt + 7'd1	;
+				ifft_saxis_tlast	<= 1'b0	;
+			end
+		end
+		else begin
+			ifft_saxis_tlast	<= 1'b0	;
+		end
+	end
+end
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+wire	[31:0]	ifft_dout	;
+
+xfft_128 u_Ifft (
+  .aclk						(	clk							),                                                 
+  .aresetn					(	fft_rstn					),                                           
+  .s_axis_config_tdata		(	16'd0						),                   
+  .s_axis_config_tvalid		(	1'b1						),                 
+  .s_axis_config_tready		( 								),                 
+  .s_axis_data_tdata		(	mul_dout					),                       
+  .s_axis_data_tvalid		(	mul_dout_valid				),                     
+  .s_axis_data_tready		(								),                     
+  .s_axis_data_tlast		(	ifft_saxis_tlast			),                       
+  .m_axis_data_tdata		(	ifft_dout					),                       
+  .m_axis_data_tuser		(	ifft_axis_data_tuser		),                       
+  .m_axis_data_tvalid		(	ifft_dout_valid				),                     
+  .m_axis_data_tready		(	1'b1						),                     
+  .m_axis_data_tlast		( 								),                       
+  .event_frame_started		(								),                   
+  .event_tlast_unexpected	(								),             
+  .event_tlast_missing		(								),                   
+  .event_status_channel_halt(								),       
+  .event_data_in_channel_halt(								),     
+  .event_data_out_channel_halt(								)   
+);
+
+always@(posedge clk or posedge rst) begin
+	if (rst == 1'b1) begin
+		dout_i 					<= 16'd0		;
+		dout_q 					<= 16'd0		;
+		dout_valid				<= 1'b0		;
+	end
+	else begin
+		if((ifft_dout_valid == 1'b1) && (ifft_axis_data_tuser[6:0] <out_points_num)) begin
+			dout_i 					<= ifft_dout[15:0]		;
+			dout_q 					<= ifft_dout[31:16]		;
+			dout_valid				<= 1'b1					;			
+		end
+		else begin
+			dout_i 					<= 16'd0				;
+			dout_q 					<= 16'd0				;
+			dout_valid				<= 1'b0					;			
+		end		
+	end
+end
+
+ 
+	 
+	
+	 
+	 
+	
+	 
+ 
+
+ 
+	 
+	
+	 
+	 
+	
+	 
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+
+
+ 
+ 
+ 
+ 
+
+ 
+     
+         
+         
+         
+         
+         
+         
+         
+     
+     
+         
+         
+         
+         
+     
+     
+         
+         
+         
+         
+             
+             
+         
+         
+             
+             
+             
+             
+             
+                 
+                 
+             
+         
+     
+ 
+
+ 
+     
+         
+         
+         
+         
+         
+         
+         
+     
+     
+         
+         
+         
+         
+     
+     
+         
+         
+         
+         
+             
+             
+         
+         
+             
+             
+             
+             
+             
+                 
+                 
+             
+         
+     
+ 
+
+ 
+
+endmodule

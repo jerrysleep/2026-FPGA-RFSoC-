@@ -1,0 +1,5 @@
+cycle,fft_status_valid,fft_status,ifft_status_valid,ifft_status,fft_overflow,ifft_overflow,fft_halt,ifft_halt
+779,1,0,0,0,0,0,0,0
+1146,0,0,1,0,0,0,0,0
+4142,1,0,0,0,0,0,0,0
+4509,0,0,1,0,0,0,0,0

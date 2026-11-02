@@ -1,0 +1,2 @@
+artifacts中包含bit、ltx、xsa文件
+reports中是综合与实现的结果，写成了报告形式

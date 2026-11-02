@@ -1,0 +1,2329 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "250000007"
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_vio_0",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "A54DA4D953E355C6BABCA11ABD8CD507",
+                        "pins": [
+                            {
+                                "name": "probe_out0",
+                                "id": 0,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "ref_freq_in",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ref_freq_in[9]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[8]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[7]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[6]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[5]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[4]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[3]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[2]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[1]"
+                                            },
+                                            {
+                                                "name": "ref_freq_in[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 1,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "ref_bomen_in",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ref_bomen_in[5]"
+                                            },
+                                            {
+                                                "name": "ref_bomen_in[4]"
+                                            },
+                                            {
+                                                "name": "ref_bomen_in[3]"
+                                            },
+                                            {
+                                                "name": "ref_bomen_in[2]"
+                                            },
+                                            {
+                                                "name": "ref_bomen_in[1]"
+                                            },
+                                            {
+                                                "name": "ref_bomen_in[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "judge_num",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "judge_num[3]"
+                                            },
+                                            {
+                                                "name": "judge_num[2]"
+                                            },
+                                            {
+                                                "name": "judge_num[1]"
+                                            },
+                                            {
+                                                "name": "judge_num[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out3",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "judge_num_detect",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "judge_num_detect[3]"
+                                            },
+                                            {
+                                                "name": "judge_num_detect[2]"
+                                            },
+                                            {
+                                                "name": "judge_num_detect[1]"
+                                            },
+                                            {
+                                                "name": "judge_num_detect[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "u_ila_0",
+                        "spec": "labtools_ila_v6",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 1,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "23e7d65a79bc59f7bc47406c1714dfae",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "U10_top_fft/u_pulse_peak_gate_detect/pulse_peak_bomen_dout",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U10_top_fft/u_pulse_peak_gate_detect/pulse_peak_bomen_dout[5]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/u_pulse_peak_gate_detect/pulse_peak_bomen_dout[4]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/u_pulse_peak_gate_detect/pulse_peak_bomen_dout[3]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/u_pulse_peak_gate_detect/pulse_peak_bomen_dout[2]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/u_pulse_peak_gate_detect/pulse_peak_bomen_dout[1]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/u_pulse_peak_gate_detect/pulse_peak_bomen_dout[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "U10_top_fft/max_freq_dout",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[9]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[8]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[7]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[6]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[5]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[4]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[3]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[2]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[1]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_freq_dout[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "U10_top_fft/max_bomen_dout",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U10_top_fft/max_bomen_dout[5]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_bomen_dout[4]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_bomen_dout[3]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_bomen_dout[2]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_bomen_dout[1]"
+                                            },
+                                            {
+                                                "name": "U10_top_fft/max_bomen_dout[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "m20_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m20_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m20_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "m23_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m23_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m23_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "m13_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m13_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m13_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe6",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "m32_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m32_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m32_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe7",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "m12_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m12_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m12_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe8",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "m30_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m30_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m30_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "m21_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m21_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m21_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe10",
+                                "id": 14,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "m22_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m22_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m22_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 15,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "m31_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m31_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m31_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 16,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "m33_axis_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "m33_axis_tdata[15]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[14]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[13]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[12]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[11]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[10]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[9]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[8]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[7]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[6]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[5]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[4]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[3]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[2]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[1]"
+                                            },
+                                            {
+                                                "name": "m33_axis_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 17,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch5_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch5_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 18,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 7,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch5/dout_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_1[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_1[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_1[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_1[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_1[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_1[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_1[1]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 19,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 8,
+                                "rightIndex": 8,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch5_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch5_2[8]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 20,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 9,
+                                "rightIndex": 25,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch5/dout_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[25]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[24]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[23]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[22]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[21]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[20]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[19]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[18]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[17]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[16]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout_2[9]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 21,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 26,
+                                "rightIndex": 26,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch5",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch5[26]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 22,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 27,
+                                "rightIndex": 31,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch5/dout",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout[31]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout[30]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout[29]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout[28]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/dout[27]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 23,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch5/din_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe15",
+                                "id": 24,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 15,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch5/din_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch5/din_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe16",
+                                "id": 25,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 16,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/din_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe17",
+                                "id": 26,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 17,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/din_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/din_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe18",
+                                "id": 27,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 18,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/rd_addr[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe19",
+                                "id": 28,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 19,
+                                "nets": [
+                                    {
+                                        "name": "u_ila_0_wr_addr[15]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[14]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[13]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[12]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[11]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[10]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[9]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[8]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[7]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[6]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[5]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[4]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[3]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[2]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[1]",
+                                        "isBus": false
+                                    },
+                                    {
+                                        "name": "u_ila_0_wr_addr[0]",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 29,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_1[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 30,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 1,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_1[1]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 31,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 2,
+                                "rightIndex": 5,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_2[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_2[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_2[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_2[2]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 32,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 6,
+                                "rightIndex": 6,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_2",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_2[6]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 33,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 7,
+                                "rightIndex": 8,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_3",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_3[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_3[7]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 34,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 9,
+                                "rightIndex": 9,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_3",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_3[9]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 35,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 10,
+                                "rightIndex": 10,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_4",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_4[10]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 36,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 11,
+                                "rightIndex": 11,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_4",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_4[11]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 37,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 12,
+                                "rightIndex": 12,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_5",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_5[12]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 38,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 13,
+                                "rightIndex": 13,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_5",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_5[13]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 39,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 14,
+                                "rightIndex": 14,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_6",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_6[14]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 40,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 15,
+                                "rightIndex": 17,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_6",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_6[17]"
+                                            },
+                                            {
+                                                "name": "dout_fft_ch1_6[16]"
+                                            },
+                                            {
+                                                "name": "dout_fft_ch1_6[15]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 41,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 18,
+                                "rightIndex": 18,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_7",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_7[18]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 42,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 19,
+                                "rightIndex": 19,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_7",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_7[19]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 43,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 20,
+                                "rightIndex": 20,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_8",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_8[20]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 44,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 21,
+                                "rightIndex": 21,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1_8",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1_8[21]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 45,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 22,
+                                "rightIndex": 22,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout_9",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout_9[22]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 46,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 23,
+                                "rightIndex": 26,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "dout_fft_ch1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dout_fft_ch1[26]"
+                                            },
+                                            {
+                                                "name": "dout_fft_ch1[25]"
+                                            },
+                                            {
+                                                "name": "dout_fft_ch1[24]"
+                                            },
+                                            {
+                                                "name": "dout_fft_ch1[23]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 47,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 27,
+                                "rightIndex": 31,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/dout",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout[31]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout[30]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout[29]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout[28]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch1/dout[27]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe21",
+                                "id": 48,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 21,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch3/din_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch3/din_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe22",
+                                "id": 49,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 22,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch2/din_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch2/din_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe23",
+                                "id": 50,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 23,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch4/din_i",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[15]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[14]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[13]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[12]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[11]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[10]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[9]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[8]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[7]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[6]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[5]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[4]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[3]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[2]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[1]"
+                                            },
+                                            {
+                                                "name": "U9_Buffer/ping_pang_switch_ch4/din_i[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe24",
+                                "id": 51,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 24,
+                                "nets": [
+                                    {
+                                        "name": "prt_ref_ADC",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe25",
+                                "id": 52,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 25,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/rd_en",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe26",
+                                "id": 53,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 26,
+                                "nets": [
+                                    {
+                                        "name": "U10_top_fft/target_state",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe27",
+                                "id": 54,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 27,
+                                "nets": [
+                                    {
+                                        "name": "U9_Buffer/ping_pang_switch_ch1/wr_en",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe28",
+                                "id": 55,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 28,
+                                "nets": [
+                                    {
+                                        "name": "u_ila_0_frame_ref",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe29",
+                                "id": 56,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 29,
+                                "nets": [
+                                    {
+                                        "name": "u_ila_0_gate_buff",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe30",
+                                "id": 57,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 30,
+                                "nets": [
+                                    {
+                                        "name": "U4_RF_Timer/prt_ref",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
